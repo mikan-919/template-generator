@@ -1,3 +1,6 @@
+import { Label } from "@/components/ui/label";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
 import { Send } from "lucide-react";
 
 interface VariableFormProps {
@@ -13,14 +16,14 @@ export function VariableForm({
 }: VariableFormProps) {
 	return (
 		<div className="space-y-4">
-			<h2 className="text-lg font-semibold text-gray-700">変数入力</h2>
+			<h2 className="scroll-m-20 text-2xl font-semibold tracking-tight">変数入力</h2>
 			<div className="grid gap-4 md:grid-cols-2">
 				{Object.entries(variables).map(([key, value]) => (
 					<div key={key} className="space-y-1">
-						<label className="block text-sm font-medium text-gray-700">
+						<Label >
 							{key}
-						</label>
-						<input
+						</Label>
+						<Input
 							type="text"
 							value={value}
 							onChange={(e) => onVariableChange(key, e.target.value)}
@@ -31,13 +34,13 @@ export function VariableForm({
 				))}
 			</div>
 
-			<button
+			<Button
 				onClick={onGenerate}
-				className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg transition-colors"
+				className="w-full"
 			>
 				<Send className="h-4 w-4" />
 				生成する
-			</button>
+			</Button>
 		</div>
 	);
 }

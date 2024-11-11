@@ -17,7 +17,7 @@ export function TemplateInput({ template, onChange }: TemplateInputProps) {
 					e.target.style.height = `${e.target.scrollHeight + 4}px`;
 					onChange(e.target.value);
 				}}
-				className="w-full  px-4 py-2 border overflow-y-hidden border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent min-h-[100px] resize-none"
+				className=" resize-none"
 				placeholder="例: こんにちは ${名前}さん！"
 			/>
 			<p className="text-sm text-muted-foreground">
